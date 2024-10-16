@@ -78,6 +78,8 @@ LOOK AT EVENT ID'S
   	4672  - Administrative user logged on
    	7045 - Service created
 
+Next: == Event Viewer ==
+	
 
 xfreerdp /u:student /v:localhost:RHP /dynamic-resolution +clipboard
 
