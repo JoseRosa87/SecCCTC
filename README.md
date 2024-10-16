@@ -8,8 +8,9 @@ uploads 10.50.22.59/uploads for more info
 ______________________________
 17
 JORO-501-W
-dSMTntzAUGo3pnS
-10.50.23.20
+Bhe032390!!
+10.50.23.20 < -jump box 
+
 ____________________________
 
 http://10.50.20.103:8000/challenges  < -- - challenges 
@@ -50,18 +51,32 @@ try to insert an your own key after trying tom’ OR 1 = ‘1 in both fields:
 __________________________________________________________________
         Windows Priv esculation: Importatant to know
 ===First THING TO DO IS SHOW HIDDEN FILES!====
-	File Explorer > File > Hidden files
+	File Explorer > File > Hidden files4624/4625
  	Always use ls -la
 
 Next: Search: ==Task Scheduler===
 	search bar > Task Scheduler  > new tasks are listed at top > Look in TS Library ..ignore one_drive stuff > Look at TRIGGERS Tab > Actions tab >  
  		 OR  schtasks /query /fo LIST /v  > powershell  >schtasks /query /fo LIST /v  | Select-String  -Pattern "Task To Run" | find /i /v "com handler"  > Start at the top look for putty.exe
     
-    Next: == Check Processes==
-    	tasklist /v > note the PID (2222 or whatever) > query session > look at what your number session is > go back and view the tasklist /v | what you found > wmic process get name, processid, parentproessid, sessionid > scroll up to find the process you noted write down the parant process > wmic process ,where (processid=2222) list full > Do the same with the parent process you wrote > tasklist /svc | findsr /i "parent process you found"
+Next: == Check Processes==
+    	tasklist /v > note the PID (2222 or whatever) > query session > look at what your number session is > go back and view the tasklist /v | what you found > wmic process get name, processid, parentproessid, sessionid > scroll up to find the process you noted write down the parant process > wmic process ,where (processid=2222) list full > Do the same with the parent process you wrote > tasklist /svc | findsr /i "parent process you found" > find the location with <where /R c:\putty.exe>
 
+Next == Services==
+	look under services  > sort by discription > look for blank space > right click properties > look under all tabs > use for the ""for /f  "tokens"" command > use wimic command next > OR sc qc testservice2
 
+ Next: == registry==   registry editor
+ 	HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\
+  	HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+   make sure to double click on stuff to see whole path
 
+Next: == Audit Logging ==
+auditpol /get /category:* | findstr /i "success failure"
+
+LOOK AT EVENT ID'S 
+	4624/4625 - Successful / failed login
+ 	4720 - Account Created
+  	4672  - Administrative user logged on
+   	7045 - Service created
 
 
 xfreerdp /u:student /v:localhost:RHP /dynamic-resolution +clipboard
@@ -117,7 +132,7 @@ B-	Windows box
 _______________________________________________________________________________________
 
 
-WINDOWS BOX: 
+WINDOWS BOX:  FOLLOW THE WINDOWS STEPS ABOVE Line 51
 1-	to access the Windows box first run a scan on the IP address that is given <step 11>
 2-	run an NMAP on each new IP you found <step 1>
 3-	find the box the you logged into as a windows user, look for the port that can run RDP (3889)
