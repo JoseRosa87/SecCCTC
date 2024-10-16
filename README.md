@@ -56,7 +56,9 @@ __________________________________________________________________
 Next: Search: ==Task Scheduler===
 	search bar > Task Scheduler  > new tasks are listed at top > Look in TS Library ..ignore one_drive stuff > Look at TRIGGERS Tab > Actions tab >  
  		 OR  schtasks /query /fo LIST /v  > powershell  >schtasks /query /fo LIST /v  | Select-String  -Pattern "Task To Run" | find /i /v "com handler"  > Start at the top look for putty.exe
-  
+    
+    Next: == Check Processes==
+    	tasklist /v > note the PID (2222 or whatever) > query session > look at what your number session is > go back and view the tasklist /v | what you found > wmic process get name, processid, parentproessid, sessionid > scroll up to find the process you noted write down the parant process > wmic process ,where (processid=2222) list full > Do the same with the parent process you wrote > tasklist /svc | findsr /i "parent process you found"
 
 
 
