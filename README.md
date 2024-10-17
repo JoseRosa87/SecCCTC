@@ -22,6 +22,8 @@ _______________________________________________________
 1- for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
 2- proxychains nmap -Pn -sT 10.0.0.X -p 1-10000 -T5   or -iL --openm
 3- proxychains nmap -Pn -sT 10.0.0.X -p 80 --script http-enum.nse    < -- finds other webpages
+== python server command ==	
+	python -m SimpleHttpServer
 
 xfreerdp /u:student /v:localhost:RHP /dynamic-resolution +clipboar
 ___________________________________________
