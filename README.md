@@ -83,11 +83,38 @@ LOOK AT EVENT ID'S
 Next: == Event Viewer ==
 	
 
-xfreerdp /u:student /v:localhost:RHP /dynamic-resolution +clipboard
+ XFREERDP Syntax: xfreerdp /v:10.50.x.x /u:student /p:password /size:1920x1000 +clipboard
+________________________________________________________________________
+++++++ Linux Box ++++++  order: Extra, intra, internal 
+https://sec.cybbh.io/public/security/latest/lessons/lesson-10-linux-exploit_sg.html#_discuss_dot_in_the_path
 
+commands to run once you are in a box: 
+whoami |ip -br a |ss -anult | cat /etc/hosts |cat /etc/crontab |less | tasklist /v |ps -elf | cd /var/tmp/ | uname -a 
+Looking for logs check /etc
 
+FIRST
+++Priv esculation steps ++
+sudo -l  > https://gtfobins > look up and past command > shell >
 
-___________________________________________________________________
+SECOND
+== SUID ==
+First run one of the following:
+
+find / -type f -perm /4000 -ls 2>/dev/null # Find SUID only files
+
+find / -type f -perm /2000 -ls 2>/dev/null # Find SGID only files
+
+find / -type f -perm /6000 -ls 2>/dev/null # Find SUID and/or SGID files
+
+Compare to Lin-OPs, if its not there, look in GTFOBINS and run the command. 
+
+see if there is a . in the path <may be admin executable>
+
+== stolen key ==
+chmod 600 /home/student/stolenkey
+ssh -i /home/student/stolenkey jane@1.2.3.4
+__________________________________________________________
++++++++++++++++++++++++++++++++++++++___________________________________________________________________++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
